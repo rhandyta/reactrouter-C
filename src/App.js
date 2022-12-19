@@ -6,6 +6,7 @@ import Contact from "./components/Contact";
 import Email from "./components/Email";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
+import PageNotFound from "./components/PageNotFound";
 
 function App() {
     return (
@@ -14,10 +15,12 @@ function App() {
             <Routes>
                 <Route index element={<Home />} />
                 <Route path="about" element={<About />}>
+                    <Route index element={<Alamat />} />
                     <Route path="alamat" element={<Alamat />} />
                     <Route path="email" element={<Email />} />
                 </Route>
                 <Route path="contact" element={<Contact />} />
+                <Route path="*" element={<PageNotFound />} />
             </Routes>
         </>
     );
